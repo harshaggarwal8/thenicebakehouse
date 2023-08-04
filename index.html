@@ -69,12 +69,12 @@
 		   		<div class="col-twelve">
 		   			<div id="counter">
 		   				<div class="half">
-		   					<span><span id="days">43 </span><sup>days</sup></span>
-		 						<span>23 <sup>hours</sup></span>
+		   					<span id="days">43 <sup>days</sup></span>
+		 						<span id="hours">23 <sup>hours</sup></span>
 		   				</div>
 							<div class="half">
-								<span>50 <sup>mins</sup></span>
-		 						<span>33 <sup>secs</sup></span>
+								<span id="mins">50 <sup>mins</sup></span>
+		 						<span id="secs">33 <sup>secs</sup></span>
 		 					</div> 
 		   			</div>
 
@@ -162,7 +162,7 @@
    <script src="js/main.js"></script>
    <script>
 	// Set the date we're counting down to
-	var countDownDate = new Date("Jan 5, 2024 15:37:25").getTime();
+	var countDownDate = new Date("Nov 5, 2023 15:37:25").getTime();
 	
 	// Update the count down every 1 second
 	var x = setInterval(function() {
@@ -178,15 +178,17 @@
 	  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 	  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
 	  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-		
 	  // Output the result in an element with id="demo"
-	  document.getElementById("days").innerHTML = days + "days " + hours + "h "
-	  + minutes + "m " + seconds + "s ";
+	  document.getElementById("days").innerHTML = days + " <sup>days</sup>";
+	  document.getElementById("hours").innerHTML = hours + " <sup>hours</sup>";
+	  document.getElementById("mins").innerHTML = minutes + " <sup>mins</sup>";
+	  document.getElementById("secs").innerHTML = seconds + " <sup>secs</sup>";
+
 		
 	  // If the count down is over, write some text 
 	  if (distance < 0) {
 		clearInterval(x);
-		document.getElementById("days").innerHTML = "EXPIRED" + <sup> "days " + </sup>;
+		document.getElementById("days").innerHTML = "EXPIRED";
 	  }
 	}, 1000);
 	</script>
